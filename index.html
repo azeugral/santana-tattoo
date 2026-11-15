@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Santana Tattoo · Tatuagem por medida no Luxemburgo</title>
+<meta name="description" content="Duda Santana, tatuador premiado desde 2007. Realismo a preto e cinza, cor e new school por medida, no Luxemburgo e em convenções pela Europa.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0f0e0c">
+<meta property="og:title" content="Santana Tattoo · Desde 2007">
+<meta property="og:description" content="Tatuagem por medida, premiada em convenções pela Europa.">
+<meta property="og:image" content="https://azeugral.github.io/santana-tattoo/assets/img/h-leao.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Archivo:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/img/h-leao.webp">
+<link rel="stylesheet" href="assets/site.css?v=1">
+</head>
+<body>
+<header class="topo">
+  <a class="marca" href="#inicio">Santana<small>Tattoo</small></a>
+  <nav class="menu" aria-label="Secções">
+    <a href="#portfolio">Portfólio</a><a href="#premios">Prémios</a><a href="#artista">O artista</a><a class="mc" href="#marcar">Marcar consulta</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
+</header>
+<div class="gaveta" id="gaveta" hidden>
+  <a href="#portfolio">Portfólio</a><a href="#premios">Prémios</a><a href="#artista">O artista</a><a class="bt bt-ouro" href="#marcar">Marcar consulta</a>
+</div>
+
+<main>
+<section class="hero" id="inicio">
+  <h1 class="sr">Santana Tattoo, tatuagem por medida premiada, no Luxemburgo</h1>
+  <div class="hero-in">
+    <div class="h-txt">
+      <p class="nome" aria-hidden="true">Santana</p>
+      <p class="frase">Tatuagem desenhada por medida para ti, por um artista premiado em convenções de toda a Europa.</p>
+      <div class="bts"><a class="bt bt-ouro" href="#marcar">Marcar consulta</a><a class="bt bt-linha" href="#portfolio">Ver trabalhos</a></div>
+      <p class="desde">Desde 2007 · Luxemburgo</p>
+    </div>
+    <figure class="trofeu" aria-label="Trabalhos de Santana Tattoo">
+      <div class="moldura">
+        <div class="janela" id="janela"></div>
+      </div>
+      <figcaption class="placa"><span class="pl-a" id="plA">Best of Show</span><span class="pl-b" id="plB">Leão · antebraço</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec portfolio" id="portfolio">
+  <h2>Portfólio</h2>
+  <div class="filtros" role="tablist" aria-label="Filtrar trabalhos">
+    <button class="on" data-f="todos">Todos</button><button data-f="bg">Preto e cinza</button><button data-f="cor">Cor</button>
+  </div>
+  <div class="grade" id="grade"></div>
+</section>
+
+<section class="sec premios" id="premios">
+  <h2>Prémios</h2>
+  <div class="pr-grid">
+    <figure class="pr-foto"><img src="assets/img/premio.webp" alt="Troféu Best of Show da Life Expo Luxemburgo" width="1444" height="1800"></figure>
+    <div class="pr-txt">
+      <p class="pr-lead">São 48 prémios em convenções, em peças a preto e cinza, a cores e new school.</p>
+      <ul class="lista">
+        <li><b>Life Expo Luxemburgo</b><span>2.º lugar, Best of Show</span></li>
+        <li><b>Metz Tattoo Expo, França</b><span>New School, premiado</span></li>
+        <li><b>Bergen Tattoo Convention, Noruega</b><span>artista convidado</span></li>
+        <li><b>Cloche d'Or, Luxemburgo</b><span>exposição e tatuagem ao vivo</span></li>
+        <li><b>Hallowed.be Studio, Londres</b><span>guest spot</span></li>
+      </ul>
+      <p class="pr-nota">Pro Team da Electric Ink Europe: todas as peças são feitas com tintas e material Electric Ink.</p>
+    </div>
+    <figure class="pr-foto"><img src="assets/img/metz.webp" alt="Santana com a peça premiada na Metz Tattoo Expo" width="1441" height="1800"></figure>
+  </div>
+</section>
+
+<section class="sec artista" id="artista">
+  <div class="art-grid">
+    <figure class="art-foto"><img src="assets/img/artista.webp" alt="Duda Santana a tatuar" width="1012" height="1800"></figure>
+    <div class="art-txt">
+      <h2>Duda Santana</h2>
+      <p>Nascido na periferia de São Paulo, o Duda tatua desde 2007 e hoje trabalha no Luxemburgo, com passagens por Portugal, Londres, França e Noruega.</p>
+      <p>Cada peça começa num desenho feito para a pessoa: retratos, leões, caveiras, dragões, homenagens a filhos e a animais, e o new school colorido que lhe deu prémios.</p>
+      <p>Também dá workshops a outros tatuadores.</p>
+      <a class="bt bt-ouro" href="#marcar">Falar com o Duda</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec marcar" id="marcar">
+  <h2>Marcar consulta</h2>
+  <p class="lead">Preenche o pedido. Ele fica copiado e o WhatsApp do Santana abre logo a seguir: é só colar e enviar.</p>
+  <form class="form" id="form" novalidate>
+    <label class="campo"><span>Nome</span><input name="nome" autocomplete="given-name" required></label>
+    <fieldset class="campo"><legend>Estilo</legend>
+      <div class="chips">
+        <label><input type="radio" name="estilo" value="Preto e cinza" checked><span>Preto e cinza</span></label>
+        <label><input type="radio" name="estilo" value="Cor"><span>Cor</span></label>
+        <label><input type="radio" name="estilo" value="New school"><span>New school</span></label>
+      </div>
+    </fieldset>
+    <div class="duas">
+      <label class="campo"><span>Zona do corpo</span><input name="zona" placeholder="Ex.: antebraço"></label>
+      <label class="campo"><span>Tamanho</span>
+        <select name="tamanho"><option>Pequeno (até 10 cm)</option><option selected>Médio (10 a 20 cm)</option><option>Grande (mais de 20 cm)</option><option>Manga ou costas</option></select></label>
+    </div>
+    <label class="campo"><span>A tua ideia</span><textarea name="ideia" rows="4" placeholder="Tema, referências, o que a peça significa para ti"></textarea></label>
+    <p class="erro" id="erro" hidden>Escreve o teu nome para continuar.</p>
+    <button class="bt bt-ouro bt-largo" type="submit">Enviar pelo WhatsApp</button>
+    <p class="ok" id="ok" hidden>Pedido copiado. Cola na conversa do WhatsApp que abriu.</p>
+  </form>
+</section>
+</main>
+
+<footer class="rodape">
+  <p class="r-nome">Santana</p>
+  <p>Santana Tattoo · Luxemburgo · <a href="https://www.instagram.com/santanatattoolx/" target="_blank" rel="noopener">Instagram</a> · <a href="mailto:santanatattoolx@gmail.com">E-mail</a></p>
+  <p class="ass">Site por <a href="https://lrgz.com.br" target="_blank" rel="noopener">L R G Z</a></p>
+</footer>
+
+<div class="lb" id="lb" hidden>
+  <button class="lb-x" id="lbX" aria-label="Fechar">✕</button>
+  <button class="lb-n lb-p" id="lbP" aria-label="Anterior">‹</button>
+  <figure><img id="lbImg" alt=""></figure>
+  <button class="lb-n lb-s" id="lbS" aria-label="Seguinte">›</button>
+</div>
+<script src="assets/main.js?v=1"></script>
+</body>
+</html>
