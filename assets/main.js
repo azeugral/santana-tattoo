@@ -1,8 +1,31 @@
+// HERO: quadros que pousam e trocam de peça com tinta, em onda (molde Veríssimo)
+(function(){
+  const SEQ=[
+    ['DKxQShKtDLS','DTyGClnDf9P','DRFJSr8jWR-','DAqGn9zOMy3','DNYaTl4ob45','DBdn7zluD7J'],
+    ['DQFDa8pDRK-','DBQ5pqGthH7','DHGtknMNafC','DAveSS9uzvw'],
+    ['Dcty3Z2uPit','DAx-fazu8_E','CvVD3O1Nr-K','DJKO1BuN-jE'],
+    ['DQ4xvXZjaRN','DBTe1QvOO7L','DBL17c0tHrc','DA_fN1YONoB'],
+    ['CWLnbqEt0Sv','DHEh5adOUMs','DBWEhtTutnZ','Cyv6-0jNX-s']];
+  const src=f=>'assets/img/p/'+f+'.webp';
+  const qs=[...document.querySelectorAll('.q')].map((q,i)=>{const ob=q.querySelector('.q-ob');const im=new Image();im.src=src(SEQ[i][0]);im.alt='';ob.appendChild(im);return{ob,k:0}});
+  SEQ.flat().forEach(f=>{const i=new Image();i.src=src(f)});
+  function troca(i){const q=qs[i];q.k=(q.k+1)%SEQ[i].length;const im=new Image();im.src=src(SEQ[i][q.k]);im.alt='';im.className='cobre';
+    im.style.setProperty('--mx',(25+Math.random()*50)+'%');im.style.setProperty('--my',(25+Math.random()*50)+'%');
+    q.ob.appendChild(im);im.addEventListener('animationend',()=>{[...q.ob.querySelectorAll('img')].forEach(x=>{if(x!==im)x.remove()});im.className=''},{once:true})}
+  const reduz=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let t=null;const onda=()=>{[0,1,2,3,4].forEach((i,n)=>setTimeout(()=>troca(i),n*380))};
+  function liga(){if(!t&&!reduz)t=setInterval(onda,5600)}function desliga(){clearInterval(t);t=null}
+  setTimeout(()=>{onda();liga()},2400);
+  new IntersectionObserver(e=>e[0].isIntersecting?liga():desliga()).observe(document.getElementById('cena'));
+  document.addEventListener('visibilitychange',()=>document.hidden?desliga():liga());
+})();
+
 // PORTFOLIO
-const P=[['DQFDa8pDRK-','bg','Leão','Luxemburgo'],['DAqGn9zOMy3','cor','Black & red','Luxemburgo'],['DHGtknMNafC','bg','Killer','Luxemburgo'],['DNYaTl4ob45','cor','Caveiras nas mãos','Londres'],['DQ4xvXZjaRN','bg','Mandala','Luxemburgo'],['CvVD3O1Nr-K','cor','Dragão vermelho','Luxemburgo'],['DHEh5adOUMs','bg','Self-made','Luxemburgo'],['DBQ5pqGthH7','cor','Unicórnio','Londres'],['DAx-fazu8_E','bg','Leão coroado','Luxemburgo'],['DJKO1BuN-jE','bg','Vegas','Luxemburgo'],['Dcty3Z2uPit','cor','Caveira e serpente','Braga'],['DAveSS9uzvw','cor','Mulher e flores','Luxemburgo'],['DP6DwDkDUk0','bg','Faraó','Luxemburgo'],['DBL17c0tHrc','bg','Smile now, cry later','Luxemburgo'],['CWLnbqEt0Sv','cor','Ossos e flores','Barreiro'],['DBWEhtTutnZ','bg','Homenagem ao cão','Luxemburgo'],['CxbCVt0NWYS','bg','Caveira coroada','Tétange'],['Co2jx0utzrq','bg','Catrina','Luxemburgo'],['DA0nunJtXEw','bg','Mãos de esqueleto','Luxemburgo'],['CnPa0RptLbk','bg','Hércules','Luxemburgo']];
-const g=document.getElementById('grade');
-P.forEach(([f,t,a,c])=>{const b=document.createElement('button');b.dataset.t=t;b.setAttribute('aria-label','Abrir '+a);b.innerHTML=`<img src="assets/img/${f}.webp" alt="${a}, tatuagem de Santana Tattoo"><span class="tag"><b>${a}</b><i>${c}</i></span>`;b.dataset.cap=a+' · '+c;g.appendChild(b)});
-document.querySelectorAll('.filtros button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filtros button').forEach(x=>x.classList.toggle('on',x===b));const f=b.dataset.f;g.querySelectorAll('button').forEach(x=>x.hidden=f!=='todos'&&x.dataset.t!==f)});
+const NOMES={'DQFDa8pDRK-':'Leão','DAqGn9zOMy3':'Black & red','DHGtknMNafC':'Killer','DNYaTl4ob45':'Caveiras nas mãos','DQ4xvXZjaRN':'Mandala','CvVD3O1Nr-K':'Dragão em traço','DHEh5adOUMs':'Self-made','DBQ5pqGthH7':'Unicórnio','DAx-fazu8_E':'Leão coroado','DJKO1BuN-jE':'Vegas','Dcty3Z2uPit':'Caveira e serpente','DAveSS9uzvw':'Mulher e flores','DP6DwDkDUk0':'Faraó','DBL17c0tHrc':'Smile now, cry later','CWLnbqEt0Sv':'Ossos e flores','DBWEhtTutnZ':'Homenagem ao cão','CxbCVt0NWYS':'Caveira coroada','Co2jx0utzrq':'Catrina','DA0nunJtXEw':'Mãos de esqueleto','CnPa0RptLbk':'Hércules','DKxQShKtDLS':'Dragão','DKurNU-NZxR':'Dragão, 1.ª sessão','DTyGClnDf9P':'Leão','DRFJSr8jWR-':'Peito inteiro','DBdn7zluD7J':'New school','DBi4vJytidT':'New school premiado','DA3I4EQNYDz':'Coluna','DAspkW_Oedy':'Ossos e flores','DBTe1QvOO7L':'Love cake','DBOS8YhNTbT':'Sweet love cake','DA6aGuyOCB5':'Kokeshi','DA_fN1YONoB':'Mãe e filho','DBgRYAoNTwE':'Pink Floyd dog','DBJKoV2u7U5':'Homenagem ao filho','DBBcJKOO-cM':'Chicana','DAWoq-9uhXU':'Serpente e punhal','DAZKrQeuqGb':'Mangual','DAc_-FdO9eS':'Dragão e mandala','DJMTM5Zthky':'Vegas','DBYsGUYN0Ta':'Flor','DBbKPHXNRwt':'Vitória'};
+const P=window.PECAS,g=document.getElementById('grade'),MOSTRA=24;
+P.forEach(([f,t,c],i)=>{const a=NOMES[f]||(t==='cor'?'A cores':'Preto e cinza');const b=document.createElement('button');b.dataset.t=t;if(i>=MOSTRA)b.classList.add('oc');b.setAttribute('aria-label','Abrir '+a);b.innerHTML=`<img src="assets/img/p/${f}.webp" alt="${a}, tatuagem de Santana Tattoo" decoding="async"><span class="tag"><b>${a}</b><i>${c}</i></span>`;b.dataset.cap=a+' · '+c;g.appendChild(b)});
+const mais=document.getElementById('mais');mais.onclick=()=>{g.querySelectorAll('.oc').forEach(x=>x.classList.remove('oc'));mais.parentNode.remove()};
+document.querySelectorAll('.filtros button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filtros button').forEach(x=>x.classList.toggle('on',x===b));const f=b.dataset.f;if(f!=='todos'&&document.getElementById('mais'))mais.click();g.querySelectorAll('button').forEach(x=>x.hidden=f!=='todos'&&x.dataset.t!==f)});
 
 const lb=document.getElementById('lb'),li=document.getElementById('lbImg'),lc=document.getElementById('lbCap');let cur=0;
 const vis=()=>[...g.querySelectorAll('button:not([hidden])')];
