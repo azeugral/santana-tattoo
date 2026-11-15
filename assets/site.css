@@ -128,3 +128,4 @@ input:focus,select:focus,textarea:focus{outline:0;border-color:var(--ouro)}
   .filtros button{padding:14px 12px;font-size:12px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.gaveta[hidden]{display:none}

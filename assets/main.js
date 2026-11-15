@@ -1,4 +1,4 @@
-const H=[['h-leao','Best of Show','Leão · antebraço'],['h-dragao','Black & Red','Dragão vermelho · ombro'],['h-newschool','New School','Premiado em Metz'],['h-coracao','Preto e cinza','Peito inteiro'],['h-costas','Cor','Ossos e flores · costas']];
+const H=[['h-leao','Preto e cinza','Leão · antebraço'],['h-dragao','Black & Red','Dragão vermelho · ombro'],['h-newschool','New School','Pin-up · braço'],['h-coracao','Preto e cinza','Coração · peito inteiro'],['h-costas','Cor','Ossos e flores · costas']];
 const jan=document.getElementById('janela'),plA=document.getElementById('plA'),plB=document.getElementById('plB');
 const hi=H.map(([f],i)=>{const im=new Image();im.src='assets/img/'+f+'.webp';im.alt='';im.decoding='async';if(!i)im.className='on';jan.appendChild(im);return im});
 let k=0;setInterval(()=>{hi[k].classList.remove('on');k=(k+1)%H.length;hi[k].classList.add('on');plB.style.opacity=0;setTimeout(()=>{plA.textContent=H[k][1];plB.textContent=H[k][2];plB.style.opacity=1},300)},4200);
