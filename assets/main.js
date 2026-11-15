@@ -9,12 +9,15 @@
   const src=f=>'assets/img/p/'+f+'.webp';
   const qs=[...document.querySelectorAll('.q')].map((q,i)=>{const ob=q.querySelector('.q-ob');const im=new Image();im.src=src(SEQ[i][0]);im.alt='';ob.appendChild(im);return{ob,k:0}});
   SEQ.flat().forEach(f=>{const i=new Image();i.src=src(f)});
-  function troca(i){const q=qs[i];q.k=(q.k+1)%SEQ[i].length;const im=new Image();im.src=src(SEQ[i][q.k]);im.alt='';im.className='cobre';
-    im.style.setProperty('--mx',(25+Math.random()*50)+'%');im.style.setProperty('--my',(25+Math.random()*50)+'%');
-    q.ob.appendChild(im);im.addEventListener('animationend',()=>{[...q.ob.querySelectorAll('img')].forEach(x=>{if(x!==im)x.remove()});im.className=''},{once:true})}
+  ["c","k","aro","brilho"].forEach(n=>{const i=new Image();i.src="assets/img/tinta-"+n+".png"});
+  function troca(i){const q=qs[i];q.k=(q.k+1)%SEQ[i].length;const f=src(SEQ[i][q.k]);
+    const mx=(30+Math.random()*40)+'%',my=(30+Math.random()*35)+'%';
+    const mk=(tag,cls)=>{const e=document.createElement(tag);e.className=cls;if(tag==='img'){e.src=f;e.alt=''}e.style.setProperty('--mx',mx);e.style.setProperty('--my',my);q.ob.appendChild(e);return e};
+    const cz=mk('img','cv cz'),aro=mk('i','aro'),bri=mk('i','bri'),kr=mk('img','cv kr');
+    kr.addEventListener('animationend',()=>{[...q.ob.children].forEach(x=>{if(x!==kr)x.remove()});kr.className='';kr.removeAttribute('style')},{once:true})}
   const reduz=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let t=null;const onda=()=>{[0,1,2,3,4].forEach((i,n)=>setTimeout(()=>troca(i),n*380))};
-  function liga(){if(!t&&!reduz)t=setInterval(onda,5600)}function desliga(){clearInterval(t);t=null}
+  let t=null;const onda=()=>{[0,1,2,3,4].forEach((i,n)=>setTimeout(()=>troca(i),n*520))};
+  function liga(){if(!t&&!reduz)t=setInterval(onda,9000)}function desliga(){clearInterval(t);t=null}
   setTimeout(()=>{onda();liga()},2400);
   new IntersectionObserver(e=>e[0].isIntersecting?liga():desliga()).observe(document.getElementById('cena'));
   document.addEventListener('visibilitychange',()=>document.hidden?desliga():liga());
