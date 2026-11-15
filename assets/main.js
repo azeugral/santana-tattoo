@@ -1,19 +1,3 @@
-// HERO: cada peça acende a cidade onde foi feita
-const H=[['h-leao','Leão · antebraço','Luxemburgo','lu'],['DNYaTl4ob45','Caveiras · mãos','Londres','ldn'],['h-dragao','Dragão · ombro','Luxemburgo','lu'],['Dcty3Z2uPit','Caveira e serpente','Braga','pt'],['h-coracao','Coração · peito','Luxemburgo','lu'],['CWLnbqEt0Sv','Ossos e flores · costas','Barreiro','pt']];
-const jan=document.getElementById('janela'),ag=document.getElementById('agulha'),legN=document.getElementById('legN'),legC=document.getElementById('legC');
-const tour=[...document.querySelectorAll('#tour li')];
-const hi=H.map(([f],i)=>{const im=new Image();im.src='assets/img/'+f+'.webp';im.alt='';im.decoding='async';im.className=i?'off':'fora';jan.insertBefore(im,ag);return im});
-const marca=c=>tour.forEach(li=>li.classList.toggle('on',li.dataset.c===c));
-marca('lu');
-let k=0;
-function prox(){const a=hi[k];k=(k+1)%H.length;const b=hi[k];
-  hi.forEach(x=>{if(x!==a&&x!==b)x.className='off'});a.className='fora';b.className='ent';
-  ag.classList.remove('vai');void ag.offsetWidth;ag.classList.add('vai');
-  legN.style.opacity=legC.style.opacity=0;
-  setTimeout(()=>{legN.textContent=H[k][1];legC.textContent=H[k][2];legN.style.opacity=legC.style.opacity=1;marca(H[k][3])},350)}
-let t=setInterval(prox,4600);
-document.addEventListener('visibilitychange',()=>{clearInterval(t);if(!document.hidden)t=setInterval(prox,4600)});
-
 // PORTFOLIO
 const P=[['DQFDa8pDRK-','bg','Leão','Luxemburgo'],['DAqGn9zOMy3','cor','Black & red','Luxemburgo'],['DHGtknMNafC','bg','Killer','Luxemburgo'],['DNYaTl4ob45','cor','Caveiras nas mãos','Londres'],['DQ4xvXZjaRN','bg','Mandala','Luxemburgo'],['CvVD3O1Nr-K','cor','Dragão vermelho','Luxemburgo'],['DHEh5adOUMs','bg','Self-made','Luxemburgo'],['DBQ5pqGthH7','cor','Unicórnio','Londres'],['DAx-fazu8_E','bg','Leão coroado','Luxemburgo'],['DJKO1BuN-jE','bg','Vegas','Luxemburgo'],['Dcty3Z2uPit','cor','Caveira e serpente','Braga'],['DAveSS9uzvw','cor','Mulher e flores','Luxemburgo'],['DP6DwDkDUk0','bg','Faraó','Luxemburgo'],['DBL17c0tHrc','bg','Smile now, cry later','Luxemburgo'],['CWLnbqEt0Sv','cor','Ossos e flores','Barreiro'],['DBWEhtTutnZ','bg','Homenagem ao cão','Luxemburgo'],['CxbCVt0NWYS','bg','Caveira coroada','Tétange'],['Co2jx0utzrq','bg','Catrina','Luxemburgo'],['DA0nunJtXEw','bg','Mãos de esqueleto','Luxemburgo'],['CnPa0RptLbk','bg','Hércules','Luxemburgo']];
 const g=document.getElementById('grade');
